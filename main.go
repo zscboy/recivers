@@ -3,10 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/open-falcon/sender/cron"
-	"github.com/open-falcon/sender/g"
-	"github.com/open-falcon/sender/http"
-	"github.com/open-falcon/sender/redis"
+	"github.com/open-falcon/recivers/g"
+	"github.com/open-falcon/recivers/http"
 	"os"
 	"os/signal"
 	"syscall"

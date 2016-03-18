@@ -1,7 +1,7 @@
 package http
 
 import (
-	"github.com/open-falcon/sender/g"
+	"github.com/open-falcon/recivers/g"
 	"github.com/toolkits/file"
 	"net/http"
 	"strings"

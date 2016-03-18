@@ -12,33 +12,9 @@ type HttpConfig struct {
 	Listen  string `json:"listen"`
 }
 
-type RedisConfig struct {
-	Addr    string `json:"addr"`
-	MaxIdle int    `json:"maxIdle"`
-}
-
-type QueueConfig struct {
-	Sms  string `json:"sms"`
-	Mail string `json:"mail"`
-}
-
-type WorkerConfig struct {
-	Sms  int `json:"sms"`
-	Mail int `json:"mail"`
-}
-
-type ApiConfig struct {
-	Sms  string `json:"sms"`
-	Mail string `json:"mail"`
-}
-
 type GlobalConfig struct {
-	Debug  bool          `json:"debug"`
-	Http   *HttpConfig   `json:"http"`
-	Redis  *RedisConfig  `json:"redis"`
-	Queue  *QueueConfig  `json:"queue"`
-	Worker *WorkerConfig `json:"worker"`
-	Api    *ApiConfig    `json:"api"`
+	Debug bool        `json:"debug"`
+	Http  *HttpConfig `json:"http"`
 }
 
 var (

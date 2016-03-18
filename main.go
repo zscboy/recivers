@@ -14,8 +14,6 @@ import (
 
 func main() {
 	cfg := flag.String("c", "cfg.json", "configuration file")
-	version := flag.Bool("v", false, "show version")
-	help := flag.Bool("h", false, "help")
 	flag.Parse()
 
 	if *version {
@@ -29,12 +27,7 @@ func main() {
 	}
 
 	g.ParseConfig(*cfg)
-	cron.InitWorker()
-	redis.InitConnPool()
-
 	go http.Start()
-	go cron.ConsumeSms()
-	go cron.ConsumeMail()
 
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)

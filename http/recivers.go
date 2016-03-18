@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func configCommonRoutes() {
+func configReciversRoutes() {
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
 	})

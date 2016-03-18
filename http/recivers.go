@@ -1,10 +1,14 @@
 package http
 
 import (
+	"bytes"
+	"encoding/json"
 	"github.com/open-falcon/recivers/g"
 	"github.com/toolkits/file"
+	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
 type Event struct {
@@ -43,14 +47,14 @@ func configReciversRoutes() {
 		event.StraId = r.URL.Query().Get("stra_id")
 		event.tags = r.URL.Query().Get("tags")
 
-		send2Agent(evnet)
+		send2Agent(event)
 	})
 }
 
 func send2Agent(event *Event) {
 	url := "http://" + event.Endpoint + ":8988"
 
-	buf, err := json.Marshal(j)
+	buf, err := json.Marshal(event)
 	if err != nil {
 		log.Println("encode json err: ", err)
 		return

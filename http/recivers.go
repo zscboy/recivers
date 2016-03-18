@@ -21,7 +21,7 @@ type Event struct {
 	TplId    string `json:"tpl_id"`
 	ExpId    string `json:"exp_id"`
 	StraId   string `json:"stra_id"`
-	tags     string `json:"tags"`
+	Tags     string `json:"tags"`
 }
 
 func configReciversRoutes() {
@@ -45,7 +45,7 @@ func configReciversRoutes() {
 		event.TplId = r.URL.Query().Get("tpl_id")
 		event.ExpId = r.URL.Query().Get("exp_id")
 		event.StraId = r.URL.Query().Get("stra_id")
-		event.tags = r.URL.Query().Get("tags")
+		event.Tags = r.URL.Query().Get("tags")
 
 		send2Agent(event)
 	})

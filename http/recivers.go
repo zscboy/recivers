@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/open-falcon/recivers/g"
-	"net/http"
 	"log"
+	"net/http"
 	"time"
 )
 
@@ -58,11 +58,11 @@ func send2Agent(event *Event) {
 		return
 	}
 
-        log.Println("send2Agent", string(buf))
+	log.Println("send2Agent", string(buf))
 	client := &http.Client{Timeout: time.Second * 60}
 	req, err := http.NewRequest("GET", url+"/restore", bytes.NewBuffer(buf))
 
-	token := genTK("@##weeee%^*@")
+	token := genTK("##weeee%^*123")
 	req.Header.Add("tk", token)
 
 	resp, err := client.Do(req)

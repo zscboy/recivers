@@ -47,7 +47,7 @@ func verifyToken(tk string) (string, bool) {
 		return "", false
 	}
 
-	return ParseTK(tk)
+	return parseTK(tk)
 }
 
 /*

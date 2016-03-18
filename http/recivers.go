@@ -30,16 +30,16 @@ func configReciversRoutes() {
 	http.HandleFunc("/recivers", func(w http.ResponseWriter, r *http.Request) {
 		event := Event{}
 
-		event.Endpoint := r.URL.Query().Get("endpoint")
-		event.Metric := r.URL.Query().Get("metric")
-		event.Status := r.URL.Query().Get("status")
-		event.Step := r.URL.Query().Get("step")
-		event.Priority := r.URL.Query().Get("priority")
-		event.Time := r.URL.Query().Get("time")
-		event.TplId := r.URL.Query().Get("tpl_id")
-		event.ExpId := r.URL.Query().Get("exp_id")
-		event.StraId := r.URL.Query().Get("stra_id")
-		event.tags := r.URL.Query().Get("tags")
+		event.Endpoint = r.URL.Query().Get("endpoint")
+		event.Metric = r.URL.Query().Get("metric")
+		event.Status = r.URL.Query().Get("status")
+		event.Step = r.URL.Query().Get("step")
+		event.Priority = r.URL.Query().Get("priority")
+		event.Time = r.URL.Query().Get("time")
+		event.TplId = r.URL.Query().Get("tpl_id")
+		event.ExpId = r.URL.Query().Get("exp_id")
+		event.StraId = r.URL.Query().Get("stra_id")
+		event.tags = r.URL.Query().Get("tags")
 
 		send2Agent(evnet)
 	})
@@ -77,6 +77,5 @@ func send2Agent(event *Event) {
 		log.Println("read message body err: ", err)
 		return
 	}
-
 
 }

@@ -14,15 +14,6 @@ func main() {
 	cfg := flag.String("c", "cfg.json", "configuration file")
 	flag.Parse()
 
-	if *version {
-		fmt.Println(g.VERSION)
-		os.Exit(0)
-	}
-
-	if *help {
-		flag.Usage()
-		os.Exit(0)
-	}
 
 	g.ParseConfig(*cfg)
 	go http.Start()
@@ -32,7 +23,6 @@ func main() {
 	go func() {
 		<-sigs
 		fmt.Println()
-		redis.ConnPool.Close()
 		os.Exit(0)
 	}()
 

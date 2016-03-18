@@ -1,7 +1,6 @@
 package http
 
 import (
-	"encoding/json"
 	"github.com/open-falcon/recivers/g"
 	"log"
 	"net/http"

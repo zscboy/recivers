@@ -16,16 +16,7 @@ func configReciversRoutes() {
 		w.Write([]byte(g.VERSION))
 	})
 
-	http.HandleFunc("/workdir", func(w http.ResponseWriter, r *http.Request) {
-		RenderDataJson(w, file.SelfDir())
-	})
+	http.HandleFunc("/recivers", func(w http.ResponseWriter, r *http.Request) {
 
-	http.HandleFunc("/config/reload", func(w http.ResponseWriter, r *http.Request) {
-		if strings.HasPrefix(r.RemoteAddr, "127.0.0.1") {
-			g.ParseConfig(g.ConfigFile)
-			RenderDataJson(w, g.Config())
-		} else {
-			w.Write([]byte("no privilege"))
-		}
 	})
 }

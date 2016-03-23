@@ -1,0 +1,10 @@
+{
+    "debug": true,
+    "http": {
+        "enabled": true,
+        "listen": "0.0.0.0:7077"
+    },
+    "agent":{
+        "listen_port": ":1988"
+    }
+}

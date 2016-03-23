@@ -50,7 +50,7 @@ func configReciversRoutes() {
 }
 
 func send2Agent(event *Event) {
-	url := "http://" + event.Endpoint + ":8988"
+	url := "http://" + event.Endpoint + g.Config().Agent.ListenPort
 
 	buf, err := json.Marshal(event)
 	if err != nil {

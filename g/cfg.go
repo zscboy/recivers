@@ -12,9 +12,13 @@ type HttpConfig struct {
 	Listen  string `json:"listen"`
 }
 
+type AgentConfig struct {
+	ListenPort string `json:"listen_port"`
+}
 type GlobalConfig struct {
-	Debug bool        `json:"debug"`
-	Http  *HttpConfig `json:"http"`
+	Debug bool         `json:"debug"`
+	Http  *HttpConfig  `json:"http"`
+	Agent *AgentConfig `json:"agent"`
 }
 
 var (
